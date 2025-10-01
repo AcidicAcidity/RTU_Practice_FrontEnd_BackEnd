@@ -93,6 +93,12 @@ body {
     font-weight: 600; /* Жирный шрифт */
     line-height: 1.4; /* Межстрочный интервал */
 }
+.product-image {
+    width: 100%; /* Ширина на всю карточку */
+    height: 200px; /* Фиксированная высота изображения */
+    object-fit: cover; /* Обрезка фото для сохранения пропорций */
+    border-bottom: 3px solid #f8f9fa; /* Светлая разделительная линия */
+}
 
 .product-price {
     font-size: 22px; /* Размер шрифта цены */
