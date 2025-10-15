@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт для практичек</title>
+    <title>Товары - Сайт для практичек</title>
     <link rel="stylesheet" href="../style/styles.css">
-
 </head>
 <body>
     <div class="page-container">
-        <div class="header">Шапка (зимняя)</div>
-        <div class="nav">
+        <header class="header">
+            <h1>Шапка (зимняя)</h1>
+        </header>
+        
+        <nav class="nav">
             <ul class="nav-list">
                 <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
                 <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
@@ -18,31 +20,50 @@
                 <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
                 <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
             </ul>
-        </div>
-        <div class="products-row">
-            <div class="product-card">
-                <img src="../images/goods3.jpg" alt="Monster Energy 9 in 1" class="product-image">
-                <div class="product-content">
-                    <h3 class="product-title">Monster Energy 9 in 1</h3>
-                    <div class="product-price">150 golden chips</div>
+        </nav>
+        
+        <main class="content">
+            <section class="products-section">
+                <h1 class="section-title">Наши товары</h1>
+                <p class="profile-group">Лучшие энергетические напитки для вашей продуктивности</p>
+                
+                <div class="products-row">
+                    <article class="product-card">
+                        <img src="../images/goods3.jpg" alt="Monster Energy 9 in 1" class="product-image">
+                        <div class="product-content">
+                            <h3 class="product-title">Monster Energy 9 in 1</h3>
+                            <p class="product-desc">Мощный энергетик с 9 компонентами для максимальной эффективности</p>
+                            <div class="product-price">150 golden chips</div>
+                            <button class="contact-button" style="padding: 10px 20px; font-size: 14px; margin-top: 15px;">Купить</button>
+                        </div>
+                    </article>
+                    
+                    <article class="product-card">
+                        <img src="../images/goods2.jpg" alt="Mountain Dew & Wizzards" class="product-image">
+                        <div class="product-content">
+                            <h3 class="product-title">Mountain Dew & Wizzards</h3>
+                            <p class="product-desc">Уникальное сочетание вкуса Mountain Dew и магических свойств</p>
+                            <div class="product-price">270 golden chips</div>
+                            <button class="contact-button" style="padding: 10px 20px; font-size: 14px; margin-top: 15px;">Купить</button>
+                        </div>
+                    </article>
+                    
+                    <article class="product-card">
+                        <img src="../images/goods1.jpg" alt="RedBull's Birds" class="product-image">
+                        <div class="product-content">
+                            <h3 class="product-title">RedBull's Birds</h3>
+                            <p class="product-desc">Легендарный RedBull с крыльями для настоящих победителей</p>
+                            <div class="product-price">400 golden chips</div>
+                            <button class="contact-button" style="padding: 10px 20px; font-size: 14px; margin-top: 15px;">Купить</button>
+                        </div>
+                    </article>
                 </div>
-            </div>
-            <div class="product-card">
-                <img src="../images/goods2.jpg" alt="Mountain Dew & Wizzards" class="product-image">
-                <div class="product-content">
-                    <h3 class="product-title">Mountain Dew & Wizzards</h3>
-                    <div class="product-price">270 golden chips</div>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="../images/goods1.jpg" alt="RedBull's Birds" class="product-image">
-                <div class="product-content">
-                    <h3 class="product-title">RedBull's Birds</h3>
-                    <div class="product-price">400 golden chips</div>
-                </div>
-            </div>
-        </div>
-        <div class="footer">Подвал</div>
+            </section>
+        </main>
+        
+        <footer class="footer">
+            <p>Подвал</p>
+        </footer>
     </div>
 </body>
 </html>
