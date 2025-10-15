@@ -1,0 +1,124 @@
+/* Кастомные стили для темной темы */
+[data-bs-theme="dark"] {
+    --bs-body-bg: #1a1d23;
+    --bs-body-color: #e9ecef;
+    --bs-light: #2d333b;
+    --bs-dark: #161b22;
+}
+
+[data-bs-theme="dark"] .bg-light {
+    background-color: var(--bs-light) !important;
+}
+
+[data-bs-theme="dark"] .card {
+    background-color: var(--bs-light);
+    border-color: #373b3e;
+}
+
+[data-bs-theme="dark"] .card-header {
+    background-color: var(--bs-dark) !important;
+    border-bottom-color: #373b3e;
+}
+
+[data-bs-theme="dark"] .text-muted {
+    color: #8b949e !important;
+}
+
+[data-bs-theme="dark"] .border-primary {
+    border-color: #0d6efd !important;
+}
+
+[data-bs-theme="dark"] .border-success {
+    border-color: #198754 !important;
+}
+
+[data-bs-theme="dark"] .border-info {
+    border-color: #0dcaf0 !important;
+}
+
+[data-bs-theme="dark"] .border-warning {
+    border-color: #ffc107 !important;
+}
+
+[data-bs-theme="dark"] .btn-outline-light {
+    border-color: #495057;
+    color: #e9ecef;
+}
+
+[data-bs-theme="dark"] .btn-outline-light:hover {
+    background-color: #495057;
+    border-color: #6c757d;
+}
+
+/* Специфичные стили для карточек товаров */
+[data-bs-theme="dark"] .product-card {
+    background: var(--bs-light);
+    border: 1px solid #373b3e;
+}
+
+[data-bs-theme="dark"] .cart-sidebar {
+    background: var(--bs-light);
+}
+
+[data-bs-theme="dark"] .cart-item {
+    border-bottom-color: #373b3e;
+}
+
+[data-bs-theme="dark"] .quantity-btn {
+    background: var(--bs-dark);
+    border-color: #495057;
+    color: #e9ecef;
+}
+
+[data-bs-theme="dark"] .quantity-btn:hover {
+    background: #495057;
+}
+
+/* Стили для модальных окон */
+[data-bs-theme="dark"] .modal-content {
+    background-color: var(--bs-light);
+    border-color: #373b3e;
+}
+
+[data-bs-theme="dark"] .modal-header {
+    border-bottom-color: #373b3e;
+}
+
+[data-bs-theme="dark"] .modal-footer {
+    border-top-color: #373b3e;
+}
+
+/* Стили для форм */
+[data-bs-theme="dark"] .form-control {
+    background-color: var(--bs-dark);
+    border-color: #495057;
+    color: #e9ecef;
+}
+
+[data-bs-theme="dark"] .form-control:focus {
+    background-color: var(--bs-dark);
+    border-color: #0d6efd;
+    color: #e9ecef;
+}
+
+[data-bs-theme="dark"] .form-select {
+    background-color: var(--bs-dark);
+    border-color: #495057;
+    color: #e9ecef;
+}
+
+[data-bs-theme="dark"] .form-select:focus {
+    background-color: var(--bs-dark);
+    border-color: #0d6efd;
+    color: #e9ecef;
+}
+
+/* Стили для прогресс-баров */
+[data-bs-theme="dark"] .progress {
+    background-color: var(--bs-dark);
+}
+
+/* Анимация переключения темы */
+.theme-transition {
+    transition: all 0.3s ease-in-out;
+}
