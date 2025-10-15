@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Сайт для практичек</title>
+        <link rel="stylesheet" href="style/styles.css">
+    </head>
+    <body class="body">
+        <div class="theme-switcher">
+            <button class="theme-switcher__button" onclick="toggleTheme()">Сменить тему</button>
+        </div>
+
+        <div class="page">
+            <header class="header">
+                <h1 class="header__title">Шапка (зимняя)</h1>
+            </header>
+            
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link nav__link--active" href="index.html">Главная</a></li>
+                    <li class="nav__item"><a class="nav__link" href="pages/news.html">Новости</a></li>
+                    <li class="nav__item"><a class="nav__link" href="pages/practice.html">Практики</a></li>
+                    <li class="nav__item"><a class="nav__link" href="pages/goods.html">Товары</a></li>
+                    <li class="nav__item"><a class="nav__link" href="pages/contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <main class="content">
+                <article class="profile">
+                    <h1 class="profile__title">Информация об авторе</h1>
+                    <img class="profile__photo" src="images/photo.jpg" alt="Фото автора">
+                    <h2 class="profile__name">Александров Егор Вадимович</h2>
+                    <p class="profile__group">ЭФБО-13-24</p>
+                </article>
+                
+                <section class="about">
+                    <p>Я родился много лет назад. Хотя знаете, 
+                    лучше бы тут была реклама танков или казино...</p>
+                </section>
+                
+                <section class="skills">
+                    <div class="skills__grid">
+                        <div class="skill-tag">C#</div>
+                        <div class="skill-tag">C++</div>
+                        <div class="skill-tag">PHP</div>
+                        <div class="skill-tag">Python</div>
+                    </div>
+                </section>
+                
+                <section class="experience">
+                    <h2 class="section-title">Мой опыт работы:</h2>
+                    <div class="experience__grid">
+                        <article class="card card--experience">
+                            <h2 class="card__title">Опыт 1</h2>
+                            <p class="card__description">Работа в курьерской службе "Dostavista"</p>
+                        </article>
+                        
+                        <article class="card card--experience">
+                            <h2 class="card__title">Опыт 2</h2>
+                            <p class="card__description">Работа на складе "ВкусВилл"</p>
+                        </article>
+                        
+                        <article class="card card--experience">
+                            <h2 class="card__title">Опыт 3</h2>
+                            <p class="card__description">Работа администратором в фитнесс зале</p>
+                        </article>
+                        
+                        <article class="card card--experience">
+                            <h2 class="card__title">Опыт 4</h2>
+                            <p class="card__description">Работаю Битрикс интегратором</p>
+                        </article>
+                    </div> 
+                </section>
+            </main>
+            
+            <footer class="footer">
+                <p>Футэр</p>
+            </footer>
+        </div>
+
+        <script>
+            function toggleTheme() {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                
+                // Сохраняем выбор темы в localStorage
+                localStorage.setItem('theme', newTheme);
+            }
+
+            // Загружаем сохраненную тему при загрузке страницы
+            document.addEventListener('DOMContentLoaded', function() {
+                const savedTheme = localStorage.getItem('theme') || 'light';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            });
+        </script>
+    </body>
+</html>
