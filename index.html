@@ -1,99 +1,239 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="light">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Сайт для практичек</title>
-        <link rel="stylesheet" href="style/styles.css">
-    </head>
-    <body class="body">
-        <div class="theme-switcher">
-            <button class="theme-switcher__button" onclick="toggleTheme()">Сменить тему</button>
-        </div>
-
-        <div class="page">
-            <header class="header">
-                <h1 class="header__title">Шапка (зимняя)</h1>
-            </header>
-            
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a class="nav__link nav__link--active" href="index.html">Главная</a></li>
-                    <li class="nav__item"><a class="nav__link" href="pages/news.html">Новости</a></li>
-                    <li class="nav__item"><a class="nav__link" href="pages/practice.html">Практики</a></li>
-                    <li class="nav__item"><a class="nav__link" href="pages/goods.html">Товары</a></li>
-                    <li class="nav__item"><a class="nav__link" href="pages/contacts.html">Контакты</a></li>
-                </ul>
-            </nav>
-            
-            <main class="content">
-                <article class="profile">
-                    <h1 class="profile__title">Информация об авторе</h1>
-                    <img class="profile__photo" src="images/photo.jpg" alt="Фото автора">
-                    <h2 class="profile__name">Александров Егор Вадимович</h2>
-                    <p class="profile__group">ЭФБО-13-24</p>
-                </article>
-                
-                <section class="about">
-                    <p>Я родился много лет назад. Хотя знаете, 
-                    лучше бы тут была реклама танков или казино...</p>
-                </section>
-                
-                <section class="skills">
-                    <div class="skills__grid">
-                        <div class="skill-tag">C#</div>
-                        <div class="skill-tag">C++</div>
-                        <div class="skill-tag">PHP</div>
-                        <div class="skill-tag">Python</div>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - Портфолио</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+    <div class="container-fluid p-0">
+        <!-- Header -->
+        <header class="bg-primary text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h1 class="h3 mb-1">Мой Портфолио</h1>
+                        <p class="mb-0 opacity-75">Студент разработчик</p>
                     </div>
-                </section>
-                
-                <section class="experience">
-                    <h2 class="section-title">Мой опыт работы:</h2>
-                    <div class="experience__grid">
-                        <article class="card card--experience">
-                            <h2 class="card__title">Курьер</h2>
-                            <p class="card__description">Работа в курьерской службе "Dostavista"</p>
-                        </article>
-                        
-                        <article class="card card--experience">
-                            <h2 class="card__title">Сборщик-кассир</h2>
-                            <p class="card__description">Работа на складе "ВкусВилл"</p>
-                        </article>
-                        
-                        <article class="card card--experience">
-                            <h2 class="card__title">Администратор</h2>
-                            <p class="card__description">Работа администратором в фитнесс зале</p>
-                        </article>
-                        
-                        <article class="card card--experience">
-                            <h2 class="card__title">Интегратор</h2>
-                            <p class="card__description">Работаю Битрикс интегратором</p>
-                        </article>
-                    </div> 
-                </section>
-            </main>
-            
-            <footer class="footer">
-                <p>Футэр</p>
-            </footer>
-        </div>
+                    <div class="col-auto">
+                        <span class="badge bg-light text-primary">ЭФБО-13-24</span>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-        <script>
-            function toggleTheme() {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                document.documentElement.setAttribute('data-theme', newTheme);
-                
-                // Сохраняем выбор темы в localStorage
-                localStorage.setItem('theme', newTheme);
-            }
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">
+                                <i class="bi bi-house me-1"></i>Главная
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/news.html">
+                                <i class="bi bi-newspaper me-1"></i>Новости
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/practice.html">
+                                <i class="bi bi-code-slash me-1"></i>Практики
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/goods.html">
+                                <i class="bi bi-cart me-1"></i>Товары
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/contacts.html">
+                                <i class="bi bi-telephone me-1"></i>Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-            // Загружаем сохраненную тему при загрузке страницы
-            document.addEventListener('DOMContentLoaded', function() {
-                const savedTheme = localStorage.getItem('theme') || 'light';
-                document.documentElement.setAttribute('data-theme', savedTheme);
-            });
-        </script>
-    </body>
+        <!-- Main Content -->
+        <main class="container my-4">
+            <!-- Profile Section -->
+            <section class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="row align-items-center">
+                            <div class="col-md-3 text-center mb-3 mb-md-0">
+                                <img src="images/photo.jpg" alt="Фото автора" class="img-fluid rounded" style="width: 200px; height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="col-md-9">
+                                <h2 class="card-title h4 text-primary">Александров Егор Вадимович</h2>
+                                <p class="card-text text-muted mb-2">
+                                    <i class="bi bi-bookmark-check-fill text-primary"></i>
+                                    Студент группы ЭФБО-13-24
+                                </p>
+                                <p class="card-text">
+                                    Факультет экономики и бизнеса, специальность "Бизнес-информатика"
+                                </p>
+                                <div class="d-flex gap-2 flex-wrap">
+                                    <span class="badge bg-primary">HTML/CSS</span>
+                                    <span class="badge bg-success">JavaScript</span>
+                                    <span class="badge bg-info">Bootstrap</span>
+                                    <span class="badge bg-warning">Bitrix</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h3 class="card-title h5 mb-0">
+                            <i class="bi bi-person-circle text-primary"></i>
+                            Обо мне
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Я родился много лет назад. Хотя знаете, лучше бы тут была реклама танков или казино...
+                        </p>
+                        <p class="card-text">
+                            Увлекаюсь веб-разработкой, работаю Битрикс интегратором. В свободное время изучаю новые технологии и frameworks.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h3 class="card-title h5 mb-0">
+                            <i class="bi bi-tools text-primary"></i>
+                            Мои навыки
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-6 col-md-3 text-center">
+                                <div class="skill-tag p-3 bg-primary text-white rounded">
+                                    <i class="bi bi-code-slash display-6"></i>
+                                    <div class="mt-2">Навык 1</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 text-center">
+                                <div class="skill-tag p-3 bg-success text-white rounded">
+                                    <i class="bi bi-laptop display-6"></i>
+                                    <div class="mt-2">Навык 2</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 text-center">
+                                <div class="skill-tag p-3 bg-info text-white rounded">
+                                    <i class="bi bi-database display-6"></i>
+                                    <div class="mt-2">Навык 3</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 text-center">
+                                <div class="skill-tag p-3 bg-warning text-white rounded">
+                                    <i class="bi bi-phone display-6"></i>
+                                    <div class="mt-2">Навык 4</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h3 class="card-title h5 mb-0">
+                            <i class="bi bi-briefcase-fill text-primary"></i>
+                            Мой опыт работы
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-primary">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-primary">Опыт 1</h5>
+                                        <p class="card-text">Работа в курьерской службе "Dostavista"</p>
+                                        <div class="d-flex gap-1">
+                                            <span class="badge bg-secondary">Логистика</span>
+                                            <span class="badge bg-secondary">Клиентский сервис</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-success">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-success">Опыт 2</h5>
+                                        <p class="card-text">Работа на складе "ВкусВилл"</p>
+                                        <div class="d-flex gap-1">
+                                            <span class="badge bg-secondary">Склад</span>
+                                            <span class="badge bg-secondary">Товары</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-info">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-info">Опыт 3</h5>
+                                        <p class="card-text">Работа администратором в фитнесс зале</p>
+                                        <div class="d-flex gap-1">
+                                            <span class="badge bg-secondary">Администрирование</span>
+                                            <span class="badge bg-secondary">Сервис</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-warning">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-warning">Опыт 4</h5>
+                                        <p class="card-text">Работаю Битрикс интегратором</p>
+                                        <div class="d-flex gap-1">
+                                            <span class="badge bg-secondary">Bitrix</span>
+                                            <span class="badge bg-secondary">Разработка</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white py-4 mt-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2024 Портфолио студента. Все права защищены.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="pages/contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+                        <a href="#" class="text-white text-decoration-none">Политика конфиденциальности</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
