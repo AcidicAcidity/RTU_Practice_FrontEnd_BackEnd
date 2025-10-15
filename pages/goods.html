@@ -1,60 +1,67 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Товары - Сайт для практичек</title>
     <link rel="stylesheet" href="../style/styles.css">
 </head>
-<body>
-    <div class="page-container">
+<body class="body">
+    <div class="theme-switcher">
+        <button class="theme-switcher__button" onclick="toggleTheme()">🌓 Сменить тему</button>
+    </div>
+
+    <div class="page">
         <header class="header">
-            <h1>Шапка (зимняя)</h1>
+            <h1 class="header__title">Наши товары</h1>
         </header>
         
         <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practice.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+                <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
+                <li class="nav__item"><a class="nav__link" href="practice.html">Практики</a></li>
+                <li class="nav__item"><a class="nav__link nav__link--active" href="goods.html">Товары</a></li>
+                <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
             </ul>
         </nav>
         
         <main class="content">
             <section class="products-section">
                 <h1 class="section-title">Наши товары</h1>
-                <p class="profile-group">Лучшие энергетические напитки для вашей продуктивности</p>
+                <p class="profile__group text-center">Лучшие энергетические напитки для вашей продуктивности</p>
                 
                 <div class="products-row">
-                    <article class="product-card">
-                        <img src="../images/goods3.jpg" alt="Monster Energy 9 in 1" class="product-image">
-                        <div class="product-content">
-                            <h3 class="product-title">Monster Energy 9 in 1</h3>
-                            <p class="product-desc">Мощный энергетик с 9 компонентами для максимальной эффективности</p>
-                            <div class="product-price">150 golden chips</div>
-                            <button class="contact-button" style="padding: 10px 20px; font-size: 14px; margin-top: 15px;">Купить</button>
+                    <article class="product-card" data-product-id="1">
+                        <img src="../images/goods3.jpg" alt="Monster Energy 9 in 1" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Monster Energy 9 in 1</h3>
+                            <p class="product-card__description">Мощный энергетик с 9 компонентами для максимальной эффективности</p>
+                            <div class="product-card__price">150 golden chips</div>
+                            <button class="button button--small" onclick="addToCart(1)">Купить</button>
                         </div>
                     </article>
                     
-                    <article class="product-card">
-                        <img src="../images/goods2.jpg" alt="Mountain Dew & Wizzards" class="product-image">
-                        <div class="product-content">
-                            <h3 class="product-title">Mountain Dew & Wizzards</h3>
-                            <p class="product-desc">Уникальное сочетание вкуса Mountain Dew и магических свойств</p>
-                            <div class="product-price">270 golden chips</div>
-                            <button class="contact-button" style="padding: 10px 20px; font-size: 14px; margin-top: 15px;">Купить</button>
+                    <article class="product-card product-card--discount" data-product-id="2">
+                        <img src="../images/goods2.jpg" alt="Mountain Dew & Wizzards" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Mountain Dew & Wizzards</h3>
+                            <p class="product-card__description">Уникальное сочетание вкуса Mountain Dew и магических свойств</p>
+                            <div class="product-card__price">
+                                <span class="product-card__price--old">300 golden chips</span>
+                                270 golden chips
+                            </div>
+                            <button class="button button--small" onclick="addToCart(2)">Купить</button>
                         </div>
                     </article>
                     
-                    <article class="product-card">
-                        <img src="../images/goods1.jpg" alt="RedBull's Birds" class="product-image">
-                        <div class="product-content">
-                            <h3 class="product-title">RedBull's Birds</h3>
-                            <p class="product-desc">Легендарный RedBull с крыльями для настоящих победителей</p>
-                            <div class="product-price">400 golden chips</div>
-                            <button class="contact-button" style="padding: 10px 20px; font-size: 14px; margin-top: 15px;">Купить</button>
+                    <article class="product-card" data-product-id="3">
+                        <img src="../images/goods1.jpg" alt="RedBull's Birds" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">RedBull's Birds</h3>
+                            <p class="product-card__description">Легендарный RedBull с крыльями для настоящих победителей</p>
+                            <div class="product-card__price">400 golden chips</div>
+                            <button class="button button--small" onclick="addToCart(3)">Купить</button>
                         </div>
                     </article>
                 </div>
@@ -65,5 +72,31 @@
             <p>Подвал</p>
         </footer>
     </div>
+
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        function addToCart(productId) {
+            const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+            productCard.classList.add('product-card--selected');
+            
+            // Имитация добавления в корзину
+            setTimeout(() => {
+                alert('Товар добавлен в корзину!');
+                productCard.classList.remove('product-card--selected');
+            }, 300);
+        }
+
+        // Загружаем сохраненную тему
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        });
+    </script>
 </body>
 </html>

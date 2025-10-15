@@ -1,25 +1,140 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт для практичек</title>
+    <title>Практики - Сайт для практичек</title>
     <link rel="stylesheet" href="../style/styles.css">
-
 </head>
-<body>
-    <div class="page-container">
-        <div class="header">Шапка (зимняя)</div>
-        <div class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practice.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-            </ul>
-        </div>
-        <div class="footer">Подвал</div>
+<body class="body">
+    <div class="theme-switcher">
+        <button class="theme-switcher__button" onclick="toggleTheme()">🌓 Сменить тему</button>
     </div>
+
+    <div class="page">
+        <header class="header">
+            <h1 class="header__title">Практические работы</h1>
+        </header>
+        
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+                <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
+                <li class="nav__item"><a class="nav__link nav__link--active" href="practice.html">Практики</a></li>
+                <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
+                <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        
+        <main class="content">
+            <section class="practice">
+                <h1 class="section-title">Практические работы</h1>
+                <p class="profile__group text-center">Список выполненных практических заданий</p>
+                
+                <div class="experience__grid">
+                    <article class="card card--practice">
+                        <h2 class="card__title">Практическая работа 1</h2>
+                        <p class="card__description">Знакомство с HTML и CSS. Создание базовой структуры веб-страницы.</p>
+                        <div class="card__status card__status--completed">Выполнено</div>
+                    </article>
+                    
+                    <article class="card card--practice">
+                        <h2 class="card__title">Практическая работа 2</h2>
+                        <p class="card__description">Работа с CSS Grid и Flexbox. Создание адаптивных макетов.</p>
+                        <div class="card__status card__status--completed">Выполнено</div>
+                    </article>
+                    
+                    <article class="card card--practice">
+                        <h2 class="card__title">Практическая работа 3</h2>
+                        <p class="card__description">Формы и валидация. Создание интерактивных форм обратной связи.</p>
+                        <div class="card__status card__status--completed">Выполнено</div>
+                    </article>
+                    
+                    <article class="card card--practice">
+                        <h2 class="card__title">Практическая работа 4</h2>
+                        <p class="card__description">JavaScript основы. Работа с DOM и событиями.</p>
+                        <div class="card__status card__status--completed">Выполнено</div>
+                    </article>
+                    
+                    <article class="card card--practice">
+                        <h2 class="card__title">Практическая работа 5</h2>
+                        <p class="card__description">Анимации и переходы. Создание плавных интерфейсов.</p>
+                        <div class="card__status card__status--in-progress">В процессе</div>
+                    </article>
+                    
+                    <article class="card card--practice">
+                        <h2 class="card__title">Практическая работа 6</h2>
+                        <p class="card__description">Работа с API. Асинхронные запросы и обработка данных.</p>
+                        <div class="card__status card__status--pending">Не начато</div>
+                    </article>
+                    
+                    <article class="card card--practice">
+                        <h2 class="card__title">Практическая работа 7</h2>
+                        <p class="card__description">Оптимизация производительности. Ленивая загрузка и кэширование.</p>
+                        <div class="card__status card__status--pending">Не начато</div>
+                    </article>
+                    
+                    <article class="card card--practice">
+                        <h2 class="card__title">Практическая работа 8</h2>
+                        <p class="card__description">Финальный проект. Разработка полнофункционального веб-приложения.</p>
+                        <div class="card__status card__status--pending">Не начато</div>
+                    </article>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="footer">
+            <p>© 2024 Все права защищены. Практические работы</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Загружаем сохраненную тему
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        });
+    </script>
+
+    <style>
+        /* Дополнительные стили для страницы практик */
+        .card--practice {
+            position: relative;
+            min-height: 120px;
+        }
+        
+        .card__status {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .card__status--completed {
+            background: #4caf50;
+            color: white;
+        }
+        
+        .card__status--in-progress {
+            background: #ff9800;
+            color: white;
+        }
+        
+        .card__status--pending {
+            background: #9e9e9e;
+            color: white;
+        }
+    </style>
 </body>
 </html>
