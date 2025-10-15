@@ -6,6 +6,39 @@
     <title>Товары - Портфолио</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .cart-sidebar {
+            position: sticky;
+            top: 20px;
+            transition: all 0.3s ease;
+        }
+        .cart-item {
+            border-bottom: 1px solid #dee2e6;
+            padding: 10px 0;
+        }
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #dee2e6;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .quantity-btn:hover {
+            background: #f8f9fa;
+        }
+    </style>
 </head>
 <body class="bg-light">
     <div class="container-fluid p-0">
@@ -64,83 +97,129 @@
 
         <!-- Main Content -->
         <main class="container my-4">
-            <!-- Products Section -->
-            <section class="mb-5">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-light">
-                        <h3 class="card-title h5 mb-0">
-                            <i class="bi bi-cart-check text-primary"></i>
-                            Энергетические напитки
-                        </h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="row g-4">
-                            <!-- Product 1 -->
-                            <div class="col-md-4">
-                                <div class="card product-card h-100">
-                                    <img src="../images/goods3.jpg" class="card-img-top" alt="Monster Energy 9 in 1" style="height: 250px; object-fit: cover;">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-primary">Monster Energy 9 in 1</h5>
-                                        <p class="card-text small text-muted">
-                                            Мощный энергетик с 9 компонентами для максимальной эффективности
-                                        </p>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <span class="h5 text-success mb-0">150 golden chips</span>
-                                            <button class="btn btn-primary btn-sm" onclick="addToCart(1)">
-                                                <i class="bi bi-cart-plus"></i> Купить
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
+            <div class="row">
+                <!-- Products Section -->
+                <div class="col-lg-8">
+                    <section class="mb-5">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-light">
+                                <h3 class="card-title h5 mb-0">
+                                    <i class="bi bi-cart-check text-primary"></i>
+                                    Энергетические напитки
+                                </h3>
                             </div>
-
-                            <!-- Product 2 -->
-                            <div class="col-md-4">
-                                <div class="card product-card h-100">
-                                    <div class="position-relative">
-                                        <span class="position-absolute top-0 end-0 badge bg-danger m-2">СКИДКА</span>
-                                        <img src="../images/goods2.jpg" class="card-img-top" alt="Mountain Dew & Wizzards" style="height: 250px; object-fit: cover;">
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title text-primary">Mountain Dew & Wizzards</h5>
-                                        <p class="card-text small text-muted">
-                                            Уникальное сочетание вкуса Mountain Dew и магических свойств
-                                        </p>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <span class="text-decoration-line-through text-muted me-2">300</span>
-                                                <span class="h5 text-success mb-0">270 golden chips</span>
+                            <div class="card-body">
+                                <div class="row g-4">
+                                    <!-- Product 1 -->
+                                    <div class="col-md-6 col-lg-12 col-xl-6">
+                                        <div class="card product-card h-100">
+                                            <img src="../images/goods3.jpg" class="card-img-top" alt="Monster Energy 9 in 1" style="height: 200px; object-fit: cover;">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-primary">Monster Energy 9 in 1</h5>
+                                                <p class="card-text small text-muted">
+                                                    Мощный энергетик с 9 компонентами для максимальной эффективности
+                                                </p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="h5 text-success mb-0">150 ₽</span>
+                                                    <button class="btn btn-primary btn-sm" onclick="addToCart(1)">
+                                                        <i class="bi bi-cart-plus"></i> Купить
+                                                    </button>
+                                                </div>
                                             </div>
-                                            <button class="btn btn-primary btn-sm" onclick="addToCart(2)">
-                                                <i class="bi bi-cart-plus"></i> Купить
-                                            </button>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
 
-                            <!-- Product 3 -->
-                            <div class="col-md-4">
-                                <div class="card product-card h-100">
-                                    <img src="../images/goods1.jpg" class="card-img-top" alt="RedBull's Birds" style="height: 250px; object-fit: cover;">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-primary">RedBull's Birds</h5>
-                                        <p class="card-text small text-muted">
-                                            Легендарный RedBull с крыльями для настоящих победителей
-                                        </p>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <span class="h5 text-success mb-0">400 golden chips</span>
-                                            <button class="btn btn-primary btn-sm" onclick="addToCart(3)">
-                                                <i class="bi bi-cart-plus"></i> Купить
-                                            </button>
+                                    <!-- Product 2 -->
+                                    <div class="col-md-6 col-lg-12 col-xl-6">
+                                        <div class="card product-card h-100">
+                                            <div class="position-relative">
+                                                <span class="position-absolute top-0 end-0 badge bg-danger m-2">СКИДКА</span>
+                                                <img src="../images/goods2.jpg" class="card-img-top" alt="Mountain Dew & Wizzards" style="height: 200px; object-fit: cover;">
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title text-primary">Mountain Dew & Wizzards</h5>
+                                                <p class="card-text small text-muted">
+                                                    Уникальное сочетание вкуса Mountain Dew и магических свойств
+                                                </p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <span class="text-decoration-line-through text-muted me-2">300 ₽</span>
+                                                        <span class="h5 text-success mb-0">270 ₽</span>
+                                                    </div>
+                                                    <button class="btn btn-primary btn-sm" onclick="addToCart(2)">
+                                                        <i class="bi bi-cart-plus"></i> Купить
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Product 3 -->
+                                    <div class="col-md-6 col-lg-12 col-xl-6">
+                                        <div class="card product-card h-100">
+                                            <img src="../images/goods1.jpg" class="card-img-top" alt="RedBull's Birds" style="height: 200px; object-fit: cover;">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-primary">RedBull's Birds</h5>
+                                                <p class="card-text small text-muted">
+                                                    Легендарный RedBull с крыльями для настоящих победителей
+                                                </p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="h5 text-success mb-0">400 ₽</span>
+                                                    <button class="btn btn-primary btn-sm" onclick="addToCart(3)">
+                                                        <i class="bi bi-cart-plus"></i> Купить
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </section>
+                </div>
+
+                <!-- Cart Sidebar -->
+                <div class="col-lg-4">
+                    <div id="cartSidebar" class="cart-sidebar d-none">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-primary text-white">
+                                <h4 class="card-title h6 mb-0">
+                                    <i class="bi bi-cart3 me-2"></i>
+                                    Корзина
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="cartItems" class="mb-3">
+                                    <!-- Cart items will be dynamically added here -->
+                                </div>
+                                
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <strong>Итого:</strong>
+                                    <span id="cartTotal" class="h5 text-success mb-0">0 ₽</span>
+                                </div>
+                                
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-success" onclick="checkout()">
+                                        <i class="bi bi-credit-card me-2"></i>Оформить заказ
+                                    </button>
+                                    <button class="btn btn-outline-danger btn-sm" onclick="clearCart()">
+                                        <i class="bi bi-trash me-1"></i>Очистить корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Empty Cart Message -->
+                    <div id="emptyCart" class="card shadow-sm">
+                        <div class="card-body text-center py-5">
+                            <i class="bi bi-cart-x display-4 text-muted mb-3"></i>
+                            <h5 class="text-muted">Корзина пуста</h5>
+                            <p class="text-muted small">Добавьте товары из каталога</p>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </main>
 
         <!-- Footer -->
@@ -161,32 +240,156 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Cart data structure
+        let cart = [];
+        const products = [
+            { id: 1, name: 'Monster Energy 9 in 1', price: 150, image: '../images/goods3.jpg' },
+            { id: 2, name: 'Mountain Dew & Wizzards', price: 270, originalPrice: 300, image: '../images/goods2.jpg' },
+            { id: 3, name: 'RedBull\'s Birds', price: 400, image: '../images/goods1.jpg' }
+        ];
+
         function addToCart(productId) {
-            const productCards = document.querySelectorAll('.product-card');
-            const currentCard = productCards[productId - 1];
-            
-            // Добавляем анимацию выбора
-            currentCard.classList.add('border', 'border-primary', 'border-3');
-            
-            // Показываем уведомление
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    originalPrice: product.originalPrice,
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+
+            updateCartUI();
+            showCartNotification(productId);
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartUI();
+        }
+
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(productId);
+                } else {
+                    updateCartUI();
+                }
+            }
+        }
+
+        function updateCartUI() {
+            const cartSidebar = document.getElementById('cartSidebar');
+            const emptyCart = document.getElementById('emptyCart');
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+
+            if (cart.length > 0) {
+                cartSidebar.classList.remove('d-none');
+                emptyCart.classList.add('d-none');
+                
+                // Update cart items
+                cartItems.innerHTML = '';
+                let total = 0;
+
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+
+                    const cartItemHTML = `
+                        <div class="cart-item">
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="${item.image}" alt="${item.name}" class="rounded me-2" style="width: 40px; height: 40px; object-fit: cover;">
+                                <div class="flex-grow-1">
+                                    <div class="fw-bold small">${item.name}</div>
+                                    <div class="text-success">${item.price} ₽</div>
+                                </div>
+                                <button class="btn btn-outline-danger btn-sm" onclick="removeFromCart(${item.id})">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                                    <span class="mx-2">${item.quantity} шт.</span>
+                                    <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                                </div>
+                                <div class="fw-bold">${itemTotal} ₽</div>
+                            </div>
+                        </div>
+                    `;
+                    cartItems.innerHTML += cartItemHTML;
+                });
+
+                cartTotal.textContent = `${total} ₽`;
+            } else {
+                cartSidebar.classList.add('d-none');
+                emptyCart.classList.remove('d-none');
+            }
+        }
+
+        function showCartNotification(productId) {
+            const product = products.find(p => p.id === productId);
             const toast = new bootstrap.Toast(document.getElementById('cartToast'));
             const toastTitle = document.getElementById('toastProductTitle');
             
-            // Устанавливаем название товара в тосте
-            const productTitles = ['Monster Energy 9 in 1', 'Mountain Dew & Wizzards', 'RedBull\'s Birds'];
-            toastTitle.textContent = productTitles[productId - 1];
-            
+            toastTitle.textContent = product.name;
             toast.show();
+
+            // Highlight product card
+            const productCards = document.querySelectorAll('.product-card');
+            const currentCard = productCards[productId - 1];
+            currentCard.classList.add('border', 'border-primary', 'border-3');
             
-            // Убираем выделение через 2 секунды
             setTimeout(() => {
                 currentCard.classList.remove('border', 'border-primary', 'border-3');
             }, 2000);
         }
+
+        function clearCart() {
+            if (confirm('Вы уверены, что хотите очистить корзину?')) {
+                cart = [];
+                updateCartUI();
+                
+                // Show notification
+                const toast = new bootstrap.Toast(document.getElementById('clearCartToast'));
+                toast.show();
+            }
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Корзина пуста!');
+                return;
+            }
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            
+            alert(`Заказ оформлен!\n\nТоваров: ${itemCount} шт.\nОбщая сумма: ${total} ₽\n\nСпасибо за покупку!`);
+            
+            // Clear cart after successful checkout
+            cart = [];
+            updateCartUI();
+        }
+
+        // Initialize cart UI
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartUI();
+        });
     </script>
 
-    <!-- Toast Notification -->
+    <!-- Toast Notifications -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <!-- Add to Cart Toast -->
         <div id="cartToast" class="toast" role="alert">
             <div class="toast-header bg-success text-white">
                 <i class="bi bi-check-circle-fill me-2"></i>
@@ -195,6 +398,18 @@
             </div>
             <div class="toast-body">
                 Товар "<span id="toastProductTitle"></span>" добавлен в корзину!
+            </div>
+        </div>
+
+        <!-- Clear Cart Toast -->
+        <div id="clearCartToast" class="toast" role="alert">
+            <div class="toast-header bg-info text-white">
+                <i class="bi bi-info-circle-fill me-2"></i>
+                <strong class="me-auto">Информация</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body">
+                Корзина очищена
             </div>
         </div>
     </div>
